@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:surf_flutter_study_jam_2023/features/ticket_storage/ticket_storage_page.dart';
+import 'package:get/get.dart';
+import 'config/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,13 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorSchemeSeed: const Color(0xff6750a4),
         useMaterial3: true,
       ),
-      home: TicketStoragePage(),
+      initialRoute: AppRoutes.initial,
+      getPages: AppRoutes.pages,
     );
   }
 }
